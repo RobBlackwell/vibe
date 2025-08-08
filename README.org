@@ -22,12 +22,14 @@ Well now you can!
 
 Lisp supports Macros and so the language is extensible. The =vibe=
 macro prompts OpenAI GPT-5 to write the function defun and then
-compiles it.
+compiles it. You only pay the OpenAI lookup penalty once at compile time,
+after that you have a bona fide function.
 
 This is a simple demonstration / prototype only.
 
 * Configuration
 
-You must set your OpenAI key either explicitly as =(setf openai:
-*openai-api-key* "my key")= or by setting the shell variable
+You must set your OpenAI key either explicitly as 
+=(setf openai:*openai-api-key* "my key")= 
+or by setting the shell variable
 =OPENAI_API_KEY=.
