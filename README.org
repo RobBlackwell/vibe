@@ -1,0 +1,33 @@
+#+TITLE: Vibe coding prototype in Common Lisp
+
+* Introduction
+
+In Lisp, you can define functions like this
+
+#+begin_src lisp
+  (defun factorial (n)
+    "Compute the factorial of N (N!)."
+    (if (<= n 1)
+        1
+        (* n (factorial (1- n))))))
+#+end_src
+
+But what if you could just write
+
+#+begin_src lisp
+  (vibe factorial (n) "Compute the factorial of n")
+#+end_src
+
+Well now you can!
+
+Lisp supports Macros and so the language is extensible. The =vibe=
+macro prompts OpenAI GPT-5 to write the function defun and then
+compiles it.
+
+This is a simple demonstration / prototype only.
+
+* Configuration
+
+You must set your OpenAI key either explicitly as =(setf openai:
+*openai-api-key* "my key")= or by setting the shell variable
+=OPENAI_API_KEY=.
